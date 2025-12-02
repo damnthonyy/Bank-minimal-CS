@@ -4,6 +4,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="Application\Application.csproj" />
-    <ProjectReference Include="infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

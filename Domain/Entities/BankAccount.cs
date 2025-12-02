@@ -18,7 +18,7 @@ namespace Bank.Domain.Entities
         public void Deposit(decimal amount)
         {
             if (amount <= 0){
-                new ArgumentException("Amount must be greater than 0");
+                throw new ArgumentException("Amount must be greater than 0");
             }
             Balance += amount;
             History.Add($"Deposited {amount} on {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}");
@@ -27,10 +27,10 @@ namespace Bank.Domain.Entities
         public void Withdraw(decimal amount)
         {
             if (amount <= 0){
-                new ArgumentException("Amount must be greater than 0");
+                throw new ArgumentException("Amount must be greater than 0");
             }
             if (amount > Balance){
-                new ArgumentException("Insufficient funds");
+                throw new ArgumentException("Insufficient funds");
             }
             Balance -= amount;
             History.Add($"Withdrawn {amount} on {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}");

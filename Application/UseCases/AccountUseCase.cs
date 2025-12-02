@@ -1,12 +1,12 @@
-using Application.Interfaces;
+using AppInterface = Application.Interfaces;
 using Bank.Domain.Entities;
 using Application.Dtos;
 
 namespace Bank.Application.UseCases
 {
-    public class AccountUseCase(IAccountRepository repository) 
+    public class AccountUseCase(AppInterface.IAccountRepository repository) 
     {
-        private readonly IAccountRepository _repository = repository;
+        private readonly AppInterface.IAccountRepository _repository = repository;
 
         // Create a new account
         public AccountResponse Create(CreateAccountRequest request)
@@ -41,13 +41,6 @@ namespace Bank.Application.UseCases
             return Map(account);
         }
 
-        // Get an account by id
-        public AccountResponse Get(Guid id)
-        {
-            var account = _repository.GetById(id);
-            return Map(account);
-        }
-
         // Map a BankAccount to an AccountResponse
         private static AccountResponse Map(BankAccount account)
         {
@@ -56,6 +49,7 @@ namespace Bank.Application.UseCases
                 Id = account.Id,
                 Owner = account.Owner,
                 Balance = account.Balance,
+                History = account.History,
             };
         }
     }

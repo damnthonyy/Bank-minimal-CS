@@ -31,7 +31,7 @@ namespace Bank.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
-            return Ok(_useCase.Get(id));
+            return Ok(_useCase.GetById(id));
         }
     }
 }
