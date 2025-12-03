@@ -1,15 +1,18 @@
-# Bank API
+# 🤖 OpenAPI Spectral LLM
 
-API REST pour la gestion de comptes bancaires, construite avec ASP.NET Core.
+> **Bridging the gap between deterministic API linting and Generative AI.**
 
-## Architecture
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Spectral](https://img.shields.io/badge/linter-Spectral-8A2BE2)](https://stoplight.io/open-source/spectral)
 
-Le projet suit une architecture en couches (Clean Architecture) :
+**OpenAPI Spectral LLM** is a tool designed to simplify API governance. It leverages Large Language Models (LLMs) to help developers write better Spectral rules, understand validation errors, and automatically fix OpenAPI specifications.
 
-- **Domain** : Entités et interfaces métier
-- **Application** : Cas d'usage et DTOs
-- **Infrastructure** : Implémentations (repositories en mémoire)
-- **API** : Contrôleurs et configuration
+## ✨ Key Features
+
+* **Natural Language to Ruleset:** Describe your governance policy (e.g., "All operation IDs must be verb-noun-resource") and let the LLM generate the correct Spectral YAML and JSONPath.
+* **Smart Error Explanation:** Don't just get an error code. Get a contextual explanation of *why* your API definition failed the linter.
+* **AI-Powered Auto-Fix:** Automatically suggest or apply fixes to your `openapi.yaml` based on Spectral violations.
+* **Model Agnostic:** Configurable to work with OpenAI (GPT-4), Anthropic (Claude), or local models via Ollama.
 
 ## Prérequis
 
