@@ -23,6 +23,8 @@ dotnet run
 ```
 
 L'API sera accessible sur `https://localhost:5220`.
+Interface Swagger UI `http://localhost:5220/swagger`.
+Spec OpenApi (JSON) `http://localhost:5220/swagger/v1/swagger.json` ( or .yaml)
 
 ## Endpoints
 
