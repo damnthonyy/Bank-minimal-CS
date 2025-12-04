@@ -32,6 +32,20 @@ jobs:
       
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    
+
+    - name: Generate OpenAPI documentation
+      run: dotnet run --project scripts/OpenApiGenerator/OpenApiGenerator.csproj
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+
+    - name: Install Spectral
+      run: npm install -g spectral
+
+    - name: Validate OpenAPI documentation
+      run: spectral lint openapi.json
+
     - name: Test
       run: dotnet test --no-restore --verbosity normal
