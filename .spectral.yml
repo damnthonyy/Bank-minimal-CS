@@ -1,4 +1,6 @@
 extends: ["spectral:oas"]
+functions:
+  pathParamsDefined: "./scripts/spectral/pathParamsDefined.js"
 
 rules:
   # Exiger une description pour chaque opération
@@ -74,10 +76,7 @@ rules:
     severity: warn
     given: "$.paths[*]"
     then:
-      function: pattern
-      functionOptions:
-        match: "\\{[^}]+\\}"
-    message: "Le chemin contient des paramètres qui doivent être documentés dans 'parameters'"
+      function: pathParamsDefined
 
   # Exiger operationId pour chaque opération
   operation-operationId:
