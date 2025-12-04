@@ -34,7 +34,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Generate OpenAPI documentation
-      run: dotnet run --project scripts/OpenApiGenerator/OpenApiGenerator.csproj --no-build
+      run: dotnet run --project scripts/OpenApiGenerator/OpenApiGenerator.csproj
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
